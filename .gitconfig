@@ -1,0 +1,34 @@
+[user]
+    name = vague
+    email = app.engineer.z@gmail.com
+[core]
+    pager = less -r
+    editor = vim
+    whitespace = off
+    excludesfile = ~/.gitignore
+[advice]
+    statusuoption = false
+[color]
+    ui = true
+[push]
+    default = current
+[pull]
+    rebase = true
+[alias]
+    cfg = config --global
+    ci = commit
+    p = push
+    pl = pull
+    b = branch
+    co = checkout
+    m = merge
+    df = diff
+    st = status
+    fe = fetch --all -p
+    rsh = reset --hard
+    # show graph
+    lg = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s %Cred%d%Creset'
+    lga = log --graph --all --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s %Cred%d%Creset'
+    # diff
+    dc = diff --cached
+    vimdiff = difftool --tool=vimdiff --no-prompt
