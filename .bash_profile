@@ -12,3 +12,5 @@ PATH=$PATH:$HOME/bin
 export PATH
 
 PS1="[\t \u@\h:\w ] $ "
+
+export PS1

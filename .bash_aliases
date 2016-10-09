@@ -1,6 +1,7 @@
 # Command
+alias ls='ls -CF'
 alias ll='ls -la --color=auto'
-alias la='ls -a'
+alias la='ls -CFa'
 alias rf='rm -rf'
 alias mk='touch'
 alias grep='grep --color'
