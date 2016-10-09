@@ -1,6 +1,13 @@
-#! /bin/bash
-ln -s ~/dotfiles/.bashrc ~/.bashrc
-ln -s ~/dotfiles/.bash_profile ~/.bash_profile
-ln -s ~/dotfiles/.bash_aliases ~/.bash_aliases
-ln -s ~/dotfiles/.vimrc ~/.vimrc
-ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+#!/bin/bash
+
+DOT_FILES=(.bashrc .bash_profile .bash_aliases .vimrc .gitconfig)
+
+for file in ${DOT_FILES[@]}
+do
+  unlink $HOME/$file
+done
+
+for file in ${DOT_FILES[@]}
+do
+  ln -s $HOME/dotfiles/$file $HOME/$file
+done
