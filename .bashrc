@@ -1,9 +1,17 @@
 # .bashrc
 
-# Source aliases definitions
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+# Source bash_completion definitions
+if [ -f /etc/bash_completion ]; then
+  source /etc/bash_completion
 fi
+
+
+# Source aliases definitions
+source ~/.bash_aliases
+
+# Source git definitions
+source ~/.git-completion.bash
+source ~/.git-prompt.sh
 
 # Setting
 HISTSIZE=1000
