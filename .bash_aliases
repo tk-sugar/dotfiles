@@ -11,6 +11,7 @@ alias ps='ps --sort=start_time'
 # Open
 alias bp='vi .bash_profile'
 alias br='vi .bashrc'
+alias ba='vi .bash_aliases'
 
 # Rails command
 alias rs='rails s'
@@ -26,4 +27,4 @@ alias bu='bundle update'
 # Git
 
 # Reload
-alias sbp='source .bash_profile'
+alias sbr='source .bashrc'
