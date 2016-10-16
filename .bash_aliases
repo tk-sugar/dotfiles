@@ -25,6 +25,7 @@ alias bu='bundle update'
 # Heroku
 
 # Git
+alias gc='vi .gitconfig'
 
 # Reload
 alias sbr='source .bashrc'

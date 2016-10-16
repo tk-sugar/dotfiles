@@ -27,6 +27,7 @@
     fe = fetch --all -p
     rsh = reset --hard
     # show graph
+    lo = log --oneline
     lg = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s %Cred%d%Creset'
     lga = log --graph --all --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s %Cred%d%Creset'
     # diff
