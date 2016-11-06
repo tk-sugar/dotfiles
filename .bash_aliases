@@ -1,4 +1,5 @@
 # Command
+alias vi='vim'
 alias ls='ls -CF'
 alias ll='ls -la --color=auto'
 alias la='ls -CFa'
