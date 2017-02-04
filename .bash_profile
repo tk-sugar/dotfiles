@@ -10,6 +10,10 @@ PATH=$PATH:$HOME/.rbenv/bin
 
 export PATH
 
+GOPATH=$HOME/go
+
+export GOPATH
+
 eval "$(rbenv init -)"
 
 PS1="[\t \u@\h:\w ] $ "

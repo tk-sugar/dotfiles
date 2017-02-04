@@ -9,7 +9,7 @@ alias grep='grep --color'
 alias df='df -h'
 alias ps='ps --sort=start_time'
 
-# Open
+# Open bash setting
 alias bp='vi .bash_profile'
 alias br='vi .bashrc'
 alias ba='vi .bash_aliases'

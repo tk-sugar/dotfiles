@@ -9,7 +9,7 @@ set showcmd
 " View Setting
 set number
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 set virtualedit=onemore
 set smartindent
 set visualbell
@@ -20,7 +20,7 @@ nnoremap j gj
 nnoremap k gk
 
 " Tab Setting
-" set list listchars=tab:\>\-
+set list listchars=tab:\▸\-
 set expandtab
 set tabstop=2
 set shiftwidth=2
@@ -32,3 +32,13 @@ set incsearch
 set wrapscan
 set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+" Arrow invalid
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
