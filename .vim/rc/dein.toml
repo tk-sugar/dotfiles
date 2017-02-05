@@ -1,0 +1,8 @@
+[[plugins]] # vim plugin manager
+repo = 'Shougo/dein.vim'
+
+[[plugins]] # IDE
+repo = 'Shougo/unite.vim'
+
+[[plugins]] # color scheme
+repo = 'tomasr/molokai'
