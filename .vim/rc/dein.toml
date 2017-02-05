@@ -6,3 +6,6 @@ repo = 'Shougo/unite.vim'
 
 [[plugins]] # color scheme
 repo = 'tomasr/molokai'
+
+[[plugins]] # intent guide
+repo = 'nathanaelkane/vim-indent-guides'
