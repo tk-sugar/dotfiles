@@ -1,3 +1,8 @@
+
+"""""""""""""""""""""""""
+" General Setting
+"""""""""""""""""""""""""
+
 " System Setting
 set fenc=utf-8
 set nobackup
@@ -9,7 +14,6 @@ set showcmd
 " View Setting
 set number
 set cursorline
-"set cursorcolumn
 set virtualedit=onemore
 set smartindent
 set visualbell
@@ -43,7 +47,10 @@ inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 
-" Vim Plugins
+"""""""""""""""""""""""""
+" Vim Plugins(dein.vim)
+"""""""""""""""""""""""""
+
 " Install directory
 let s:dein_dir = expand('~/.vim/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
@@ -81,3 +88,54 @@ syntax enable
 if dein#check_install()
   call dein#install()
 endif
+
+
+"""""""""""""""""""""""""
+" Unite.vim
+"""""""""""""""""""""""""
+let g:unite_enable_start_insert=0
+
+" KeyMap
+noremap <C-P> :Unite buffer<CR>
+noremap <C-N> :Unite -buffer-name=file file<CR>
+noremap <C-Z> :Unite file_mru<CR>
+
+"""""""""""""""""""""""""
+" ColorScheme
+"""""""""""""""""""""""""
+colorscheme molokai
+syntax on
+set t_Co=256
+let g:molokai_original = 1
+let g:rehash256 = 1
+set background=dark
+
+"""""""""""""""""""""""""
+" IndentGuide
+"""""""""""""""""""""""""
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level=2
+
+" IndentColor
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=gray
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray
+
+let g:indent_guides_color_change_percent = 30
+let g:indent_guides_guide_size = 1
+
+
+"""""""""""""""""""""""""
+" NERDTree
+"""""""""""""""""""""""""
+autocmd vimenter * NERDTree
+let NERDTreeShowHidden = 1
+let g:NERDTreeShowBookmarks=1
+
+" KeyMap
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
+"""""""""""""""""""""""""
+" neocomplete
+"""""""""""""""""""""""""
+

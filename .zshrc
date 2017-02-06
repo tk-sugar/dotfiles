@@ -5,8 +5,9 @@
 # Env setting
 
 export LANG=ja_JP.UTF-8
-
-export PATH="$HOME/.rbenv/bin:$PATH" 
+export GOPATH=$HOME/go
+export PATH=$PATH:$HOME/go/bin:/usr/local/go/bin
+export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init - zsh)"
 
 # Set up the prompt
@@ -18,7 +19,7 @@ prompt adam1
 setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
-bindkey -v
+bindkey -e
 
 # zsh history
 HISTFILE=~/.zsh_history
@@ -73,5 +74,7 @@ alias mv='mv -i'
 alias grep='grep --color'
 alias df='df -h'
 alias ps='ps --sort=start_time'
+
+# Glocal Alias
 alias -g L='| less'
 alias -g G='| grep'
