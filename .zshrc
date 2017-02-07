@@ -75,6 +75,6 @@ alias grep='grep --color'
 alias df='df -h'
 alias ps='ps --sort=start_time'
 
-# Glocal Alias
+# Global Alias
 alias -g L='| less'
 alias -g G='| grep'
