@@ -9,6 +9,9 @@ repo = 'Shougo/dein.vim'
 [[plugins]] # IDE
 repo = 'Shougo/unite.vim'
 
+[[plugins]] # IDE option
+repo = 'Shougo/neomru.vim'
+
 [[plugins]] # color scheme
 repo = 'tomasr/molokai'
 
@@ -18,12 +21,18 @@ repo = 'nathanaelkane/vim-indent-guides'
 [[plugins]] # tree
 repo = 'scrooloose/nerdtree'
 
+[[plugins]] # ctrlp
+repo = 'ctrlpvim/ctrlp.vim'
+
 ###############################
 ## Ruby, Rails Plugin Repo
 ###############################
 
 [[plugins]] # neosnippet
 repo = 'Shougo/neosnippet'
+
+[[plugins]] # snippet
+repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]] # rails
 repo = 'tpope/vim-rails'

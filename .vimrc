@@ -37,6 +37,15 @@ set wrapscan
 set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+" Prefix Change
+nnoremap s <Nop>
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap st :<C-u>tabnew<CR>
+nnoremap sT :<C-u>Unite tab<CR>
+
 " Arrow invalid
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -96,9 +105,9 @@ endif
 let g:unite_enable_start_insert=0
 
 " KeyMap
-noremap <C-P> :Unite buffer<CR>
-noremap <C-N> :Unite -buffer-name=file file<CR>
-noremap <C-Z> :Unite file_mru<CR>
+noremap <C-l> :Unite buffer<CR>
+noremap <C-n> :Unite -buffer-name=file file<CR>
+noremap <C-z> :Unite file_mru<CR>
 
 """""""""""""""""""""""""
 " ColorScheme
@@ -213,3 +222,11 @@ endif
 " Neosnippet
 """""""""""""""""""""""""
 
+
+"""""""""""""""""""""""""
+" CtrlP
+"""""""""""""""""""""""""
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_lazy_update = 1
+let g:ctrlp_max_height = 20
