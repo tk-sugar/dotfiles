@@ -45,6 +45,11 @@ nnoremap sl <C-w>l
 nnoremap sh <C-w>h
 nnoremap st :<C-u>tabnew<CR>
 nnoremap sT :<C-u>Unite tab<CR>
+nnoremap sn gt
+nnoremap sp gT
+nnoremap ss :<C-u>sp<CR>
+nnoremap sv :<C-u>vs<CR>
+nnoremap sq :<C-u>q<CR>
 
 " Arrow invalid
 noremap <Up> <Nop>
@@ -57,7 +62,7 @@ inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 
 """""""""""""""""""""""""
-" Vim Plugins(dein.vim)
+" Vim Plugins Setup(dein.vim)
 """""""""""""""""""""""""
 
 " Install directory
@@ -145,6 +150,13 @@ let g:NERDTreeShowBookmarks=1
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 """""""""""""""""""""""""
+" vim-nerdtree-tabs
+"""""""""""""""""""""""""
+if argc() == 0
+  let g:nerdtree_tabs_open_on_console_startup = 1
+end
+
+"""""""""""""""""""""""""
 " Neocomplete
 """""""""""""""""""""""""
 "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
@@ -222,6 +234,15 @@ endif
 " Neosnippet
 """""""""""""""""""""""""
 
+"""""""""""""""""""""""""
+" Vim Airline
+"""""""""""""""""""""""""
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#show_close_button = 0
 
 """""""""""""""""""""""""
 " CtrlP

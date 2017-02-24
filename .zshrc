@@ -7,8 +7,10 @@
 export LANG=ja_JP.UTF-8
 export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/go/bin:/usr/local/go/bin
-export PATH=$HOME/.rbenv/bin:$PATH
+export PATH=$PATH:$HOME/.rbenv/bin
 eval "$(rbenv init - zsh)"
+
+typeset -U path PATH
 
 # Set up the prompt
 
