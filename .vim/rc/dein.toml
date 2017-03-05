@@ -51,3 +51,10 @@ repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]] # rails
 repo = 'tpope/vim-rails'
+
+###############################
+## Git Plugin Repo
+###############################
+
+[[plugins]] # git
+repo = 'tpope/vim-fugitive'
