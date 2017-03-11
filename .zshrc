@@ -6,9 +6,10 @@
 
 export LANG=ja_JP.UTF-8
 export GOPATH=$HOME/go
-export PATH=$PATH:$HOME/go/bin:/usr/local/go/bin
-export PATH=$PATH:$HOME/.rbenv/bin
-eval "$(rbenv init - zsh)"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+[ -s /home/tksugar/.rvm/scripts/rvm ] && source /home/tksugar/.rvm/scripts/rvm
 
 typeset -U path PATH
 
@@ -80,3 +81,6 @@ alias ps='ps --sort=start_time'
 # Global Alias
 alias -g L='| less'
 alias -g G='| grep'
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

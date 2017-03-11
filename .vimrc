@@ -35,6 +35,7 @@ set smartcase
 set incsearch
 set wrapscan
 set hlsearch
+set tags=./tags
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 " Prefix Change

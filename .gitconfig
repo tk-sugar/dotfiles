@@ -1,6 +1,6 @@
 [user]
-    name = vague
-    email = app.engineer.z@gmail.com
+	name = Takuma_Sato
+	email = takuma.sato@eys-style.com
 [core]
     pager = less -r
     editor = vim

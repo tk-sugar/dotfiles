@@ -19,3 +19,5 @@ eval "$(rbenv init -)"
 PS1="[\t \u@\h:\w ] $ "
 
 export PS1
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
