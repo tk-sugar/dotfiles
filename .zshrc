@@ -77,6 +77,7 @@ alias mv='mv -i'
 alias grep='grep --color'
 alias df='df -h'
 alias ps='ps --sort=start_time'
+alias vis="vim -S ~/.vim.session"
 
 # Global Alias
 alias -g L='| less'
