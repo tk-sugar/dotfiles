@@ -3,58 +3,104 @@
 ## Vim General Plugin Repo
 ###############################
 
-[[plugins]] # vim plugin manager
+[[plugins]] 
 repo = 'Shougo/dein.vim'
 
-[[plugins]] # IDE
+[[plugins]]
 repo = 'Shougo/unite.vim'
 
-[[plugins]] # IDE option
+[[plugins]]
 repo = 'Shougo/neomru.vim'
 
-[[plugins]] # color scheme
-repo = 'tomasr/molokai'
-
-[[plugins]] # indent guide
+[[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 
-[[plugins]] # tree
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 
-[[plugins]] # nerdtree share
+[[plugins]]
 repo = 'jistr/vim-nerdtree-tabs'
 
-[[plugins]] # ctrlp
+[[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
 
-[[plugins]] # endwise
-repo = 'tpope/vim-endwise'
-
-[[plugins]] # tcomment_vim
+[[plugins]]
 repo = 'tomtom/tcomment_vim'
 
-[[plugins]] # statu bar
+###############################
+## スキーマ
+###############################
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
+
+[[plugins]]
 repo = 'vim-airline/vim-airline'
 
-[[plugins]] # autoclose
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+###############################
+## コード補完
+###############################
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+insert = 1
+
+[[plugins]]
+repo = 'Shougo/neocomplcache-rsense.vim'
+
+[[plugins]]
+repo = 'marcus/rsense'
+
+###############################
+## 静的解析
+###############################
+[[plugins]]
+repo = 'scrooloose/syntastic'
+
+###############################
+## ドキュメント参照
+###############################
+[[plugins]]
+repo = 'thinca/vim-ref'
+
+[[plugins]]
+repo = 'yuku-t/vim-ref-ri'
+
+###############################
+## メソットジャンプ
+###############################
+[[plugins]]
+repo = 'szw/vim-tags'
+
+###############################
+## タグ閉じ
+###############################
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
+[[plugins]]
 repo = 'Townk/vim-autoclose'
 
 ###############################
 ## Ruby, Rails Plugin Repo
 ###############################
 
-[[plugins]] # neosnippet
+[[plugins]]
 repo = 'Shougo/neosnippet'
 
-[[plugins]] # snippet
+[[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
-[[plugins]] # rails
+[[plugins]]
 repo = 'tpope/vim-rails'
 
 ###############################
 ## Git Plugin Repo
 ###############################
 
-[[plugins]] # git
+[[plugins]]
 repo = 'tpope/vim-fugitive'

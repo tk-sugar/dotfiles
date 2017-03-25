@@ -69,7 +69,7 @@ setopt extended_glob
 # Alias
 alias vi='vim'
 alias ls='ls -CF'
-alias ll='ls -la --color=auto'
+alias ll='ls -lha --color=auto'
 alias la='ls -CFa'
 alias rf='rm -rf'
 alias mk='touch'
@@ -78,10 +78,13 @@ alias grep='grep --color'
 alias df='df -h'
 alias ps='ps --sort=start_time'
 alias vis="vim -S ~/.vim.session"
+alias pbcopy='xsel --clipboard --input'
+alias tc='tmux save-buffer - | pbcopy'
 
 # Global Alias
 alias -g L='| less'
 alias -g G='| grep'
+alias -g C='| xsel --clipboard --input'
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
