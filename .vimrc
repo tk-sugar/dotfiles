@@ -52,6 +52,10 @@ nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sy "+yy
+nnoremap [q :cprevious<CR>
+nnoremap ]q :cnext<CR>
+nnoremap [Q :<C-u>cfirst<CR>
+nnoremap ]Q :<C-u>clast<CR>
 
 " Arrow invalid
 noremap <Up> <Nop>
@@ -161,10 +165,17 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
 endif
-let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+
+"""""""""""""""""""""""""
+" Rsense
+"""""""""""""""""""""""""
+let g:rsenseHome = expand("/home/tksugar/.rbenv/shims/rsense")
+let g:rsenseUseOmniFunc = 1
 
 """""""""""""""""""""""""
 " Syntastic

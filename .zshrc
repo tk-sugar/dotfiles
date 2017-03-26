@@ -8,8 +8,10 @@ export LANG=ja_JP.UTF-8
 export GOPATH=$HOME/go
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-[ -s /home/tksugar/.rvm/scripts/rvm ] && source /home/tksugar/.rvm/scripts/rvm
+# export PATH="$PATH:$HOME/.rvm/bin"
+# [ -s /home/tksugar/.rvm/scripts/rvm ] && source /home/tksugar/.rvm/scripts/rvm
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 typeset -U path PATH
 
@@ -85,6 +87,3 @@ alias tc='tmux save-buffer - | pbcopy'
 alias -g L='| less'
 alias -g G='| grep'
 alias -g C='| xsel --clipboard --input'
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
