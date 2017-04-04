@@ -51,11 +51,13 @@ nnoremap sp gT
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
-nnoremap sy "+yy
 nnoremap [q :cprevious<CR>
 nnoremap ]q :cnext<CR>
 nnoremap [Q :<C-u>cfirst<CR>
 nnoremap ]Q :<C-u>clast<CR>
+nmap n nzz
+nmap N Nzz
+noremap <C-y> "+y
 
 " Arrow invalid
 noremap <Up> <Nop>

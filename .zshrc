@@ -32,6 +32,7 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 # Use modern completion system
+source /usr/local/bin/aws_zsh_completer.sh
 autoload -Uz compinit
 compinit
 
