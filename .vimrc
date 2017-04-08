@@ -38,7 +38,7 @@ set hlsearch
 set tags=./tags
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-" Prefix Change
+" KeyBind
 nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
@@ -55,6 +55,7 @@ nnoremap [q :cprevious<CR>
 nnoremap ]q :cnext<CR>
 nnoremap [Q :<C-u>cfirst<CR>
 nnoremap ]Q :<C-u>clast<CR>
+nnoremap == gg=G''
 nmap n nzz
 nmap N Nzz
 noremap <C-y> "+y
