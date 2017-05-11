@@ -86,6 +86,15 @@ repo = 'tpope/vim-endwise'
 repo = 'Townk/vim-autoclose'
 
 ###############################
+## 自動セッション
+###############################
+[[plugins]]
+repo = 'xolox/vim-session'
+
+[[plugins]]
+repo = 'xolox/vim-misc'
+
+###############################
 ## Ruby, Rails Plugin Repo
 ###############################
 

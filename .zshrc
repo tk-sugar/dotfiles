@@ -7,6 +7,9 @@
 export LANG=ja_JP.UTF-8
 export GOPATH=$HOME/go
 
+# RubyMine PATH
+export PATH="$HOME/jobs/tools/RubyMine-171.4424.33/bin:$PATH"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
 # [ -s /home/tksugar/.rvm/scripts/rvm ] && source /home/tksugar/.rvm/scripts/rvm
@@ -25,6 +28,10 @@ setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
+
+if [ $SHLVL = 1 ]; then
+  tmux
+fi
 
 # zsh history
 HISTFILE=~/.zsh_history
@@ -81,6 +88,7 @@ alias grep='grep --color'
 alias df='df -h'
 alias ps='ps --sort=start_time'
 alias vis="vim -S ~/.vim.session"
+alias be="bundle exec"
 alias pbcopy='xsel --clipboard --input'
 alias tc='tmux save-buffer - | pbcopy'
 
