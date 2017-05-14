@@ -91,6 +91,7 @@ alias vis="vim -S ~/.vim.session"
 alias be="bundle exec"
 alias pbcopy='xsel --clipboard --input'
 alias tc='tmux save-buffer - | pbcopy'
+alias sakura="~/.wine/drive_c/Program\ Files\ \(x86\)/sakura/sakura.sh"
 
 # Global Alias
 alias -g L='| less'

@@ -186,6 +186,13 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
 " let g:syntastic_ruby_checkers = ['rubocop'] }
 
 """""""""""""""""""""""""
+" Ctags
+"""""""""""""""""""""""""
+nnoremap <C-j> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
+
+"""""""""""""""""""""""""
 " Vim Airline
 """""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
@@ -212,15 +219,14 @@ let g:session_autosave = 'no'
 " 引数なしでvimを起動した時にセッションを復元しない
 let g:session_autoload = 'no'
 " 1分間に1回自動保存をしない(する場合は1)
-let g:session_autosave_periodic = 0
+let g:session_autosave_periodic = 1
 
 function! s:save_session(...)
   if a:0
     let session_name = a:1
   else
     " fugitive.vimの機能を使っているのはブランチ名を取得する部分のみ
-    " substitute(system('git rev-parse --abbrev-ref HEAD'),
-    '\n', '', 'g')などで代替可能
+    " substitute(system('git rev-parse --abbrev-ref HEAD'), '\n', '', 'g')などで代替可能
     let session_name = fugitive#head()
   end
 
@@ -235,17 +241,14 @@ function! s:load_session(...)
   if a:0
     let session_name = a:1
   else
-    let session_name =
-    fugitive#head()
+    let session_name = fugitive#head()
   end
 
   if strlen(session_name)
-    execute 'OpenSession
-    .'.session_name.'.session'
+    execute 'OpenSession .'.session_name.'.session'
   else
     execute
-    'OpenSession
-    '.g:session_default_name
+    'OpenSession '.g:session_default_name
   endif
 endfunction
 
