@@ -27,6 +27,9 @@ repo = 'ctrlpvim/ctrlp.vim'
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 
+[[plugins]]
+repo = 'kana/vim-submode'
+
 ###############################
 ## スキーマ
 ###############################

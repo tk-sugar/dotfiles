@@ -191,6 +191,12 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
 nnoremap <C-j> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <C-h> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
 nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <C-]> g<C-]>
+
+let g:vim_tags_project_tags_command = "/usr/local/bin/ctags -f .tags -R . 2>/dev/null"
+let g:vim_tags_gems_tags_command = "/usr/local/bin/ctags -R -f .Gemfile.lock.tags `bundle show --paths` 2>/dev/null"
+set tags+=.tags
+set tags+=.Gemfile.lock.tags
 
 """""""""""""""""""""""""
 " Vim Airline
