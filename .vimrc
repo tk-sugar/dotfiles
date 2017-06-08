@@ -21,7 +21,7 @@ set laststatus=2
 set wildmode=list:longest
 nnoremap j gj
 nnoremap k gk
-set clipboard=unnamed,autoselect
+set clipboard=unnamedplus
 
 " Tab Setting
 set expandtab
