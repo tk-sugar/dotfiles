@@ -92,6 +92,7 @@ alias be="bundle exec"
 alias pbcopy='xsel --clipboard --input'
 alias tc='tmux save-buffer - | pbcopy'
 alias sakura="~/.wine/drive_c/Program\ Files\ \(x86\)/sakura/sakura.sh"
+alias nkflinux='nkf --overwrite -w -Lu'
 
 # Global Alias
 alias -g L='| less'

@@ -69,6 +69,8 @@ inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 
+
+autocmd QuickFixCmdPost *grep* cwindow
 """""""""""""""""""""""""
 " Vim Plugins Setup(dein.vim)
 """""""""""""""""""""""""
@@ -121,7 +123,14 @@ let g:unite_enable_start_insert=0
 noremap <C-l> :Unite buffer<CR>
 noremap <C-n> :Unite -buffer-name=file file<CR>
 noremap <C-z> :Unite file_mru<CR>
+nnoremap <silent> sg  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> scg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+nnoremap <silent> sr  :<C-u>UniteResume search-buffer<CR>
 
+if executable('ag')
+  let g:ctrlp_use_caching=0
+  let g:ctrlp_user_command='ag %s -i --nocolor --nogroup -g ""'
+endif
 """""""""""""""""""""""""
 " ColorScheme
 """""""""""""""""""""""""

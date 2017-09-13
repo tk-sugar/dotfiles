@@ -13,6 +13,10 @@ repo = 'Shougo/unite.vim'
 repo = 'Shougo/neomru.vim'
 
 [[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 
 [[plugins]]
@@ -29,6 +33,9 @@ repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
 repo = 'kana/vim-submode'
+
+[[plugins]]
+repo = 'rking/ag.vim'
 
 ###############################
 ## スキーマ
