@@ -8,13 +8,16 @@ export LANG=ja_JP.UTF-8
 export GOPATH=$HOME/go
 
 # RubyMine PATH
-export PATH="$HOME/jobs/tools/RubyMine-171.4424.33/bin:$PATH"
+# PATH="$HOME/jobs/tools/RubyMine-171.4424.33/bin:$PATH"
+PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
 # [ -s /home/tksugar/.rvm/scripts/rvm ] && source /home/tksugar/.rvm/scripts/rvm
-export PATH="$HOME/.rbenv/bin:$PATH"
+PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+export PATH
 
 typeset -U path PATH
 
@@ -79,7 +82,7 @@ setopt extended_glob
 # Alias
 alias vi='vim'
 alias ls='ls -CF'
-alias ll='ls -lha --color=auto'
+alias ll='ls -lha'
 alias la='ls -CFa'
 alias rf='rm -rf'
 alias mk='touch'
