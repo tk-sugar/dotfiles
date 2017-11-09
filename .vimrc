@@ -18,10 +18,12 @@ set smartindent
 set visualbell
 set showmatch
 set laststatus=2
+set colorcolumn=80
 set wildmode=list:longest
 nnoremap j gj
 nnoremap k gk
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
+set clipboard=unnamed
 
 " Tab Setting
 set expandtab
