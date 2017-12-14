@@ -47,6 +47,9 @@ repo = 'tomasr/molokai'
 repo = 'nanotech/jellybeans.vim'
 
 [[plugins]]
+repo = 'jacoborus/tender.vim'
+
+[[plugins]]
 repo = 'vim-airline/vim-airline'
 
 [[plugins]]
@@ -56,14 +59,13 @@ repo = 'vim-airline/vim-airline-themes'
 ## コード補完
 ###############################
 [[plugins]]
-repo = 'Shougo/neocomplete.vim'
-insert = 1
+repo = 'Shougo/neocomplcache.vim'
 
 [[plugins]]
 repo = 'Shougo/neocomplcache-rsense.vim'
 
 [[plugins]]
-repo = 'marcus/rsense'
+repo = 'rsense/rsense'
 
 ###############################
 ## 静的解析
@@ -105,11 +107,21 @@ repo = 'xolox/vim-session'
 repo = 'xolox/vim-misc'
 
 ###############################
+## VIEW
+###############################
+
+[[plugins]]
+repo = 'slim-template/vim-slim'
+
+[[plugins]]
+repo = 'tpope/vim-haml'
+
+###############################
 ## Ruby, Rails Plugin Repo
 ###############################
 
 [[plugins]]
-repo = 'Shougo/neosnippet'
+repo = 'shougo/neosnippet'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'

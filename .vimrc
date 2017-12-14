@@ -24,6 +24,9 @@ nnoremap j gj
 nnoremap k gk
 " set clipboard=unnamedplus
 set clipboard=unnamed
+set backspace=indent,eol,start
+set list
+set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
 
 " Tab Setting
 set expandtab
@@ -136,8 +139,8 @@ endif
 """""""""""""""""""""""""
 " ColorScheme
 """""""""""""""""""""""""
-colorscheme jellybeans
-syntax on
+colorscheme tender
+syntax enable
 " set t_Co=256
 " let g:molokai_original = 1
 " let g:rehash256 = 1
@@ -176,18 +179,22 @@ end
 " Neocomplete
 """""""""""""""""""""""""
 let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
 
 """""""""""""""""""""""""
 " Rsense
 """""""""""""""""""""""""
-let g:rsenseHome = expand("/home/tksugar/.rbenv/shims/rsense")
+if !exists('g:neocomplcache_omni_patterns')
+    let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+
+let g:rsenseHome = expand("/Users/tksugar/.rbenv/shims/rsense")
 let g:rsenseUseOmniFunc = 1
 
 """""""""""""""""""""""""
@@ -215,12 +222,10 @@ set tags+=.Gemfile.lock.tags
 let g:airline_powerline_fonts = 1
 set laststatus=2
 set showtabline=2
-let g:airline_theme = 'molokai'
+let g:airline_theme = 'tender'
 let g:airline#extensions#tabline#enabled = 1
 
-let g:airline#extensions#tabline#show_splits = 0
-let g:airline#extensions#tabline#show_tab_type = 0
-let g:airline#extensions#tabline#show_close_button = 0
+let g:lightline = { 'colorscheme': 'tender' }
 
 """""""""""""""""""""""""
 " Vim Misc

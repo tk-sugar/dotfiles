@@ -9,7 +9,7 @@ export GOPATH=$HOME/go
 
 # RubyMine PATH
 # PATH="$HOME/jobs/tools/RubyMine-171.4424.33/bin:$PATH"
-PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
+PATH=/usr/local/bin:/usr/bin:/bin:${PATH}
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
@@ -42,7 +42,7 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 # Use modern completion system
-source /usr/local/bin/aws_zsh_completer.sh
+# source /usr/local/bin/aws_zsh_completer.sh
 autoload -Uz compinit
 compinit
 
@@ -51,7 +51,6 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -96,6 +95,7 @@ alias pbcopy='xsel --clipboard --input'
 alias tc='tmux save-buffer - | pbcopy'
 alias sakura="~/.wine/drive_c/Program\ Files\ \(x86\)/sakura/sakura.sh"
 alias nkflinux='nkf --overwrite -w -Lu'
+alias ctags="`brew --prefix`/bin/ctags"
 
 # Global Alias
 alias -g L='| less'
