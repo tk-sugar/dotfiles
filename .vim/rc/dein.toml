@@ -130,6 +130,39 @@ repo = 'Shougo/neosnippet-snippets'
 repo = 'tpope/vim-rails'
 
 ###############################
+## Front develop
+###############################
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
+[[plugins]]
+repo = 'tell-k/vim-browsereload-mac'
+
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+
+[[plugins]]
+repo = 'alpaca-tc/html5.vim'
+
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+[[plugins]]
+repo = 'AtsushiM/sass-compile.vim'
+
+[[plugins]]
+repo = 'mattn/webapi-vim'
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+
+[[plugins]]
+repo = 'statianzo/vim-jade'
+
+###############################
 ## Git Plugin Repo
 ###############################
 

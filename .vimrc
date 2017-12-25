@@ -164,7 +164,7 @@ let g:indent_guides_guide_size = 1
 """""""""""""""""""""""""
 " NERDTree
 """""""""""""""""""""""""
-" autocmd vimenter * NERDTree
+autocmd vimenter * NERDTree
 let NERDTreeShowHidden = 1
 let g:NERDTreeShowBookmarks=1
 
@@ -276,3 +276,42 @@ endfunction
 
 command! -nargs=? SaveS call s:save_session(<f-args>)
 command! -nargs=? LoadS call s:load_session(<f-args>)
+
+"""""""""""""""""""""""""
+" Browsereload
+"""""""""""""""""""""""""
+let g:returnApp = "iTerm"
+nmap <Space>bc :ChromeReloadStart<CR>
+nmap <Space>bC :ChromeReloadStop<CR>
+"nmap <Space>ba :AllBrowserReloadStart<CR>
+"nmap <Space>bA :AllBrowserReloadStop<CR>
+
+"""""""""""""""""""""""""
+" HTML5
+"""""""""""""""""""""""""
+syn keyword htmlTagName contained article aside audio bb canvas command
+syn keyword htmlTagName contained datalist details dialog embed figure
+syn keyword htmlTagName contained header hgroup keygen mark meter nav output
+syn keyword htmlTagName contained progress time ruby rt rp section time
+syn keyword htmlTagName contained source figcaption
+syn keyword htmlArg contained autofocus autocomplete placeholder min max
+syn keyword htmlArg contained contenteditable contextmenu draggable hidden
+syn keyword htmlArg contained itemprop list sandbox subject spellcheck
+syn keyword htmlArg contained novalidate seamless pattern formtarget
+syn keyword htmlArg contained formaction formenctype formmethod
+syn keyword htmlArg contained sizes scoped async reversed sandbox srcdoc
+syn keyword htmlArg contained hidden role
+syn match   htmlArg "\<\(aria-[\-a-zA-Z0-9_]\+\)=" contained
+syn match   htmlArg contained "\s*data-[-a-zA-Z0-9_]\+"
+
+"""""""""""""""""""""""""
+" SASS
+"""""""""""""""""""""""""
+let g:sass_compile_auto = 1
+let g:sass_compile_cdloop = 5
+let g:sass_compile_cssdir = ['css', 'stylesheet']
+let g:sass_compile_file = ['scss', 'sass']
+let g:sass_started_dirs = []
+
+autocmd FileType less,sass  setlocal sw=2 sts=2 ts=2 et
+" au! BufWritePost * SassCompile
