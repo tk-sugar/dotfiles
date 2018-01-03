@@ -93,7 +93,6 @@ alias vis="vim -S ~/.vim.session"
 alias be="bundle exec"
 alias pbcopy='xsel --clipboard --input'
 alias tc='tmux save-buffer - | pbcopy'
-alias sakura="~/.wine/drive_c/Program\ Files\ \(x86\)/sakura/sakura.sh"
 alias nkflinux='nkf --overwrite -w -Lu'
 alias ctags="`brew --prefix`/bin/ctags"
 
