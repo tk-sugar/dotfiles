@@ -12,7 +12,7 @@ set showcmd
 
 " View Setting
 set number
-set cursorline
+" set cursorline
 set virtualedit=onemore
 set smartindent
 set visualbell

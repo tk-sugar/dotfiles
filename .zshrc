@@ -9,13 +9,14 @@ export GOPATH=$HOME/go
 
 # RubyMine PATH
 # PATH="$HOME/jobs/tools/RubyMine-171.4424.33/bin:$PATH"
-PATH=/usr/local/bin:/usr/bin:/bin:${PATH}
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
 # [ -s /home/tksugar/.rvm/scripts/rvm ] && source /home/tksugar/.rvm/scripts/rvm
 PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+PATH="/usr/local/bin:$PATH"
 
 export PATH
 
@@ -94,9 +95,14 @@ alias be="bundle exec"
 alias pbcopy='xsel --clipboard --input'
 alias tc='tmux save-buffer - | pbcopy'
 alias nkflinux='nkf --overwrite -w -Lu'
-alias ctags="`brew --prefix`/bin/ctags"
+alias ctags='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R .'
+alias grepout="grep -v -e '^\s*#' -e '^\s*$'"
 
 # Global Alias
 alias -g L='| less'
 alias -g G='| grep'
 alias -g C='| xsel --clipboard --input'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
