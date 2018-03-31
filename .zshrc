@@ -17,8 +17,11 @@ PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 PATH="/usr/local/bin:$PATH"
-
 export PATH
+
+if [ -f .import_keys.rc ]; then
+  source .import_keys.rc
+fi
 
 typeset -U path PATH
 
@@ -106,3 +109,4 @@ alias -g C='| xsel --clipboard --input'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"

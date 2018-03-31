@@ -219,13 +219,20 @@ set tags+=.Gemfile.lock.tags
 """""""""""""""""""""""""
 " Vim Airline
 """""""""""""""""""""""""
-let g:airline_powerline_fonts = 1
 set laststatus=2
 set showtabline=2
-let g:airline_theme = 'tender'
+let g:airline_section_a = airline#section#create(['mode','','branch'])
 let g:airline#extensions#tabline#enabled = 1
-
-let g:lightline = { 'colorscheme': 'tender' }
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#tab_nr_type = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:Powerline_symbols = 'fancy'
+set t_Co=256
+let g:airline_theme='badwolf'
+let g:airline_left_sep = '⮀'
+let g:airline_right_sep = '⮂'
+let g:airline#extensions#tabline#left_sep = '⮀'
+let g:airline#extensions#tabline#left_alt_sep = '⮀'
 
 """""""""""""""""""""""""
 " Vim Misc
@@ -307,11 +314,11 @@ syn match   htmlArg contained "\s*data-[-a-zA-Z0-9_]\+"
 """""""""""""""""""""""""
 " SASS
 """""""""""""""""""""""""
-let g:sass_compile_auto = 1
-let g:sass_compile_cdloop = 5
-let g:sass_compile_cssdir = ['css', 'stylesheet']
-let g:sass_compile_file = ['scss', 'sass']
-let g:sass_started_dirs = []
-
-autocmd FileType less,sass  setlocal sw=2 sts=2 ts=2 et
-" au! BufWritePost * SassCompile
+" let g:sass_compile_auto = 1
+" let g:sass_compile_cdloop = 5
+" let g:sass_compile_cssdir = ['css', 'stylesheet']
+" let g:sass_compile_file = ['scss', 'sass']
+" let g:sass_started_dirs = []
+"
+" autocmd FileType less,sass  setlocal sw=2 sts=2 ts=2 et
+" " au! BufWritePost * SassCompile
