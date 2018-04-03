@@ -53,7 +53,10 @@ nnoremap sn gt
 nnoremap sp gT
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
-nnoremap sq :<C-u>q<CR>
+nnoremap sx :qa<CR>
+nnoremap sq :tabclose<CR>
+nnoremap s0 :tabfirst<CR>
+nnoremap s$ :tablast<CR>
 nnoremap [q :cprevious<CR>
 nnoremap ]q :cnext<CR>
 nnoremap [Q :<C-u>cfirst<CR>
@@ -62,6 +65,11 @@ nnoremap == gg=G''
 nmap n nzz
 nmap N Nzz
 noremap <C-y> "+y
+
+" Tab Jump
+for n in range(1, 9)
+  execute 'nnoremap s'.n  ':<C-u>tabnext'.n.'<CR>'
+endfor
 
 " Arrow invalid
 noremap <Up> <Nop>
