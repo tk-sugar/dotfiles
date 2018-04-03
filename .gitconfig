@@ -1,35 +1,36 @@
 [user]
-	name = Takuma_Sato
-	email = takuma.sato@eys-style.com
+  name = Takuma_Sato
+  email = takuma.sato@eys-style.com
 [core]
-    pager = less -r
-    editor = vim
-    whitespace = off
-    excludesfile = ~/.gitignore
+  pager = less -r
+  editor = vim
+  whitespace = off
+  excludesfile = ~/.gitignore
 [advice]
-    statusuoption = false
+  statusuoption = false
 [color]
-    ui = true
+  ui = true
 [push]
-    default = current
+  default = current
 [pull]
-    rebase = true
+  rebase = true
 [alias]
-    cfg = config --global
-    ci = commit
-    p = push
-    pl = pull
-    b = branch
-    co = checkout
-    m = merge
-    df = diff
-    st = status
-    fe = fetch --all -p
-    rsh = reset --hard
+  cfg = config --global
+  ci = commit
+  p = push
+  pl = pull
+  b = branch
+  co = checkout
+  m = merge
+  df = diff
+  st = status
+  fe = fetch --all -p
+  rsh = reset --hard
+  g = grep
     # show graph
-    lo = log --oneline
-    lg = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s %Cred%d%Creset'
-    lga = log --graph --all --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s %Cred%d%Creset'
+  lo = log --oneline
+  lg = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s %Cred%d%Creset'
+  lga = log --graph --all --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s %Cred%d%Creset'
     # diff
-    dc = diff --cached
-    vimdiff = difftool --tool=vimdiff --no-prompt
+  dc = diff --cached
+  vimdiff = difftool --tool=vimdiff --no-prompt
