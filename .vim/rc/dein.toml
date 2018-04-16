@@ -131,6 +131,12 @@ repo = 'Shougo/neosnippet-snippets'
 [[plugins]]
 repo = 'tpope/vim-rails'
 
+[[plugins]]
+repo = 'tpope/vim-dispatch'
+
+[[plugins]]
+repo = 'thoughtbot/vim-rspec'
+
 ###############################
 ## Front develop
 ###############################

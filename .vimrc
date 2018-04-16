@@ -272,6 +272,11 @@ nmap <Space>bC :ChromeReloadStop<CR>
 "nmap <Space>bA :AllBrowserReloadStop<CR>
 
 """""""""""""""""""""""""
+" Rails Setting
+"""""""""""""""""""""""""
+let g:rspec_command = "Dispatch rspec {spec}"
+
+"""""""""""""""""""""""""
 " HTML5
 """""""""""""""""""""""""
 syn keyword htmlTagName contained article aside audio bb canvas command
