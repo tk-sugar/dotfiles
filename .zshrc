@@ -5,7 +5,8 @@
 # Env setting
 
 export LANG=ja_JP.UTF-8
-export GOPATH=$HOME/go
+export GOPATH=$HOME/workspace/go-app
+export PATH=$PATH:$GOPATH/bin
 
 # RubyMine PATH
 # PATH="$HOME/jobs/tools/RubyMine-171.4424.33/bin:$PATH"
@@ -24,6 +25,8 @@ if [ -f .import_keys.rc ]; then
 fi
 
 typeset -U path PATH
+
+source ~/.emergency_strum
 
 # Set up the prompt
 

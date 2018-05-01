@@ -173,6 +173,24 @@ repo = 'statianzo/vim-jade'
 [[plugins]]
 repo = 'digitaltoad/vim-pug'
 
+[[plugins]]
+repo = 'ianks/vim-tsx'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+
+###############################
+## Markdown
+###############################
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+
+[[plugins]]
+repo = 'kannokanno/previm'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
 ###############################
 ## Git Plugin Repo
 ###############################

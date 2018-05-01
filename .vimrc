@@ -294,6 +294,17 @@ syn keyword htmlArg contained hidden role
 syn match   htmlArg "\<\(aria-[\-a-zA-Z0-9_]\+\)=" contained
 syn match   htmlArg contained "\s*data-[-a-zA-Z0-9_]\+"
 
+
+"""""""""""""""""""""""""
+" TypeScript
+"""""""""""""""""""""""""
+autocmd BufRead,BufNewFile *.tsx set filetype=typescript
+
+"""""""""""""""""""""""""
+" Markdown
+"""""""""""""""""""""""""
+au BufRead,BufNewFile *.md set filetype=markdown
+
 """""""""""""""""""""""""
 " SASS
 """""""""""""""""""""""""
