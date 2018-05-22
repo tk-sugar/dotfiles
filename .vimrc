@@ -304,6 +304,7 @@ autocmd BufRead,BufNewFile *.tsx set filetype=typescript
 " Markdown
 """""""""""""""""""""""""
 au BufRead,BufNewFile *.md set filetype=markdown
+let g:vim_markdown_folding_disabled=1
 
 """""""""""""""""""""""""
 " SASS

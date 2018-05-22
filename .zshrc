@@ -8,6 +8,8 @@ export LANG=ja_JP.UTF-8
 export GOPATH=$HOME/workspace/go-app
 export PATH=$PATH:$GOPATH/bin
 
+export PATH=$PATH:/Users/tksugar/Library/Python/3.6/bin
+
 # RubyMine PATH
 # PATH="$HOME/jobs/tools/RubyMine-171.4424.33/bin:$PATH"
 
@@ -103,6 +105,8 @@ alias tc='tmux save-buffer - | pbcopy'
 alias nkflinux='nkf --overwrite -w -Lu'
 alias ctags='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R .'
 alias grepout="grep -v -e '^\s*#' -e '^\s*$'"
+alias do="docker"
+alias dc="docker-compose"
 
 # Global Alias
 alias -g L='| less'
