@@ -107,6 +107,8 @@ alias ctags='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R .'
 alias grepout="grep -v -e '^\s*#' -e '^\s*$'"
 alias do="docker"
 alias dc="docker-compose"
+alias dm="docker-machine"
+alias ec="ecs-cli"
 
 # Global Alias
 alias -g L='| less'
