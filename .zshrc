@@ -105,10 +105,12 @@ alias tc='tmux save-buffer - | pbcopy'
 alias nkflinux='nkf --overwrite -w -Lu'
 alias ctags='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R .'
 alias grepout="grep -v -e '^\s*#' -e '^\s*$'"
-alias do="docker"
+alias d="docker"
 alias dc="docker-compose"
 alias dm="docker-machine"
 alias ec="ecs-cli"
+alias dpr="docker rm -f \`docker ps -a -q\`"
+alias dir="docker rmi -f \`docker images -a -q\`"
 
 # Global Alias
 alias -g L='| less'
