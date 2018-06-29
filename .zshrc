@@ -8,19 +8,14 @@ export LANG=ja_JP.UTF-8
 export GOPATH=$HOME/workspace/go-app
 export PATH=$PATH:$GOPATH/bin
 
-export PATH=$PATH:/Users/tksugar/Library/Python/3.6/bin
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
 
-# RubyMine PATH
-# PATH="$HOME/jobs/tools/RubyMine-171.4424.33/bin:$PATH"
+export PATH=$PATH:/Users/tksugar/Library/Python/3.6/bin
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
 # [ -s /home/tksugar/.rvm/scripts/rvm ] && source /home/tksugar/.rvm/scripts/rvm
-PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-PATH="/usr/local/bin:$PATH"
-export PATH
 
 if [ -f .import_keys.rc ]; then
   source .import_keys.rc

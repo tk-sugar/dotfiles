@@ -141,9 +141,6 @@ repo = 'thoughtbot/vim-rspec'
 ## Front develop
 ###############################
 [[plugins]]
-repo = 'mattn/emmet-vim'
-
-[[plugins]]
 repo = 'tell-k/vim-browsereload-mac'
 
 [[plugins]]
