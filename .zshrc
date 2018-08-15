@@ -8,7 +8,7 @@ export LANG=ja_JP.UTF-8
 export GOPATH=$HOME/workspace/go-app
 export PATH=$PATH:$GOPATH/bin
 
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims/bin:$PATH"
 eval "$(rbenv init - zsh)"
 
 export PATH=$PATH:/Users/tksugar/Library/Python/3.6/bin
@@ -22,8 +22,6 @@ if [ -f .import_keys.rc ]; then
 fi
 
 typeset -U path PATH
-
-source ~/.emergency_strum
 
 # Set up the prompt
 
@@ -92,13 +90,13 @@ alias mk='touch'
 alias mv='mv -i'
 alias grep='grep --color'
 alias df='df -h'
-alias ps='ps --sort=start_time'
+#alias ps='ps --sort=start_time'
 alias vis="vim -S ~/.vim.session"
 alias be="bundle exec"
 alias pbcopy='xsel --clipboard --input'
 alias tc='tmux save-buffer - | pbcopy'
 alias nkflinux='nkf --overwrite -w -Lu'
-alias ctags='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R .'
+# alias ctags='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R .'
 alias grepout="grep -v -e '^\s*#' -e '^\s*$'"
 alias d="docker"
 alias dc="docker-compose"
