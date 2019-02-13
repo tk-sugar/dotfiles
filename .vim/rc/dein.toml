@@ -90,6 +90,9 @@ repo = 'yuku-t/vim-ref-ri'
 [[plugins]]
 repo = 'szw/vim-tags'
 
+[[plugins]]
+repo = 'tsukkee/unite-tag'
+
 ###############################
 ## タグ閉じ
 ###############################
@@ -210,3 +213,6 @@ repo = 'pangloss/vim-javascript'
 
 [[plugins]]
 repo = 'scrooloose/syntastic'
+
+[[plugins]]
+repo = 'elzr/vim-json'

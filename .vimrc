@@ -223,6 +223,11 @@ let g:vim_tags_gems_tags_command = "/usr/local/bin/ctags -R -f .Gemfile.lock.tag
 set tags+=.tags
 set tags+=.Gemfile.lock.tags
 
+autocmd BufWritePost *
+      \ if exists('b:git_dir') && !empty(glob(b:git_dir.'/hooks/ctags')) |
+      \   call system('"'.b:git_dir.'/hooks/ctags"') |
+      \ endif
+
 """""""""""""""""""""""""
 " Vim Airline
 """""""""""""""""""""""""

@@ -11,7 +11,13 @@ export PATH=$PATH:$GOPATH/bin
 export PATH="$HOME/.rbenv/shims/bin:$PATH"
 eval "$(rbenv init - zsh)"
 
-export PATH=$PATH:/Users/tksugar/Library/Python/3.6/bin
+# for MySQL v5.7
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export DYLD_LIBRARY_PATH="/usr/local/opt/mysql@5.7/:$DYLD_LIBRARY_PATH"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
@@ -34,9 +40,9 @@ setopt histignorealldups sharehistory
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
-if [ $SHLVL = 1 ]; then
-  tmux
-fi
+# if [ $SHLVL = 1 ]; then
+#   tmux
+# fi
 
 # zsh history
 HISTFILE=~/.zsh_history
@@ -93,7 +99,6 @@ alias df='df -h'
 #alias ps='ps --sort=start_time'
 alias vis="vim -S ~/.vim.session"
 alias be="bundle exec"
-alias pbcopy='xsel --clipboard --input'
 alias tc='tmux save-buffer - | pbcopy'
 alias nkflinux='nkf --overwrite -w -Lu'
 # alias ctags='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R .'
@@ -104,6 +109,10 @@ alias dm="docker-machine"
 alias ec="ecs-cli"
 alias dpr="docker rm -f \`docker ps -a -q\`"
 alias dir="docker rmi -f \`docker images -a -q\`"
+alias localmyq="mysql -u root -h 127.0.0.1 -p jmty_prototype_development"
+alias resquekill="ps -ef | grep resque | grep -v grep | awk '{print $2}' | xargs kill -9"
+alias workeron="cd ~/project/jmty/beagle && BACKGROUND=yes bundle exec rake resque:work QUEUE='*'"
+alias get-gmo-data="python2.7 ~/Desktop/Selenium/gmo_payment.py"
 
 # Global Alias
 alias -g L='| less'
@@ -114,3 +123,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+export AWS_REGION=ap-northeast-1
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
+export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}
