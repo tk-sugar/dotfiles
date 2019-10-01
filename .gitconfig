@@ -1,6 +1,6 @@
 [user]
   name = tk-sugar
-  email = app.engineer.z@gmail.com
+	email = takuma.sato@jmty.jp
 [core]
   pager = less -r
   editor = vim
@@ -38,3 +38,5 @@
   openpr = "!f() { hub browse -- `git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1 | cut -f5 -d' ' | sed -e 's%#%pull/%'`; }; f"
 [init]
 	templatedir = ~/.git_template
+[core]
+  excludesfile = /Users/takuma.sato/.gitignore_global

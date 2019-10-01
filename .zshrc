@@ -19,6 +19,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
 # [ -s /home/tksugar/.rvm/scripts/rvm ] && source /home/tksugar/.rvm/scripts/rvm
@@ -113,6 +115,7 @@ alias localmyq="mysql -u root -h 127.0.0.1 -p jmty_prototype_development"
 alias resquekill="ps -ef | grep resque | grep -v grep | awk '{print $2}' | xargs kill -9"
 alias workeron="cd ~/project/jmty/beagle && BACKGROUND=yes bundle exec rake resque:work QUEUE='*'"
 alias get-gmo-data="python2.7 ~/Desktop/Selenium/gmo_payment.py"
+alias xargs="gxargs"
 
 # Global Alias
 alias -g L='| less'
@@ -126,3 +129,27 @@ export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export AWS_REGION=ap-northeast-1
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}
+
+# peco for shell
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+setopt extended_history
+setopt share_history
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_verify
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
+setopt hist_expire_dups_first
+setopt hist_expand
+setopt inc_append_history
+
+function peco-select-history {
+    BUFFER=`history -n -r 1 | peco --query "$LBUFFER"`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
+
