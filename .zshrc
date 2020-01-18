@@ -15,9 +15,9 @@ eval "$(rbenv init - zsh)"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export DYLD_LIBRARY_PATH="/usr/local/opt/mysql@5.7/:$DYLD_LIBRARY_PATH"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 
@@ -116,6 +116,7 @@ alias resquekill="ps -ef | grep resque | grep -v grep | awk '{print $2}' | xargs
 alias workeron="cd ~/project/jmty/beagle && BACKGROUND=yes bundle exec rake resque:work QUEUE='*'"
 alias get-gmo-data="python2.7 ~/Desktop/Selenium/gmo_payment.py"
 alias xargs="gxargs"
+alias tas="tmux attach-session -t"
 
 # Global Alias
 alias -g L='| less'
