@@ -5,8 +5,9 @@
 # Env setting
 
 export LANG=ja_JP.UTF-8
-export GOPATH=$HOME/workspace/go-app
+export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$HOME/.cargo/env
 
 export PATH="$HOME/.rbenv/shims/bin:$PATH"
 eval "$(rbenv init - zsh)"
@@ -90,9 +91,9 @@ setopt extended_glob
 
 # Alias
 alias vi='vim'
-alias ls='ls -CF'
-alias ll='ls -lha'
-alias la='ls -CFa'
+alias ls='exa'
+alias ll='exa -l'
+alias la='exa -a'
 alias rf='rm -rf'
 alias mk='touch'
 alias mv='mv -i'
@@ -112,8 +113,8 @@ alias ec="ecs-cli"
 alias dpr="docker rm -f \`docker ps -a -q\`"
 alias dir="docker rmi -f \`docker images -a -q\`"
 alias localmyq="mysql -u root -h 127.0.0.1 -p jmty_prototype_development"
-alias resquekill="ps -ef | grep resque | grep -v grep | awk '{print $2}' | xargs kill -9"
-alias workeron="cd ~/project/jmty/beagle && BACKGROUND=yes bundle exec rake resque:work QUEUE='*'"
+alias resque_stop="ps -ef | grep resque | grep -v grep | awk '{print $2}' | xargs kill -9"
+alias resque_start="cd ~/project/jmty/beagle && BACKGROUND=yes bundle exec rake resque:work QUEUE='*'"
 alias get-gmo-data="python2.7 ~/Desktop/Selenium/gmo_payment.py"
 alias xargs="gxargs"
 alias tas="tmux attach-session -t"
