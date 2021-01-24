@@ -21,6 +21,7 @@ export DYLD_LIBRARY_PATH="/usr/local/opt/mysql@5.7/:$DYLD_LIBRARY_PATH"
 # eval "$(pyenv init -)"
 
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
