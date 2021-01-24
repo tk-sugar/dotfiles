@@ -40,3 +40,5 @@
 	templatedir = ~/.git_template
 [core]
   excludesfile = /Users/takuma.sato/.gitignore_global
+[ghq]
+  root = ~/WorkSpace
