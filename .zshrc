@@ -81,8 +81,11 @@ setopt extended_glob
 # Alias
 alias vi='vim'
 alias ls='exa'
-alias ll='exa -l'
+alias ll='exa -la'
 alias la='exa -a'
+alias cat='bat'
+alias cat='bat'
+alias ps='procs'
 alias rf='rm -rf'
 alias mk='touch'
 alias mv='mv -i'
