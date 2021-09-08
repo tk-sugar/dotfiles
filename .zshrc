@@ -80,16 +80,16 @@ setopt extended_glob
 
 # Alias
 alias vi='vim'
+alias g='git'
 alias ls='exa'
 alias ll='exa -la'
 alias la='exa -a'
 alias cat='bat'
-alias cat='bat'
-alias ps='procs'
+# alias ps='procs'
 alias rf='rm -rf'
 alias mk='touch'
 alias mv='mv -i'
-alias grep='grep --color'
+# alias grep='rg'
 alias df='df -h'
 #alias ps='ps --sort=start_time'
 alias vis="vim -S ~/.vim.session"
@@ -110,6 +110,7 @@ alias resque_start="cd ~/project/jmty/beagle && BACKGROUND=yes bundle exec rake 
 alias get-gmo-data="python2.7 ~/Desktop/Selenium/gmo_payment.py"
 alias xargs="gxargs"
 alias tas="tmux attach-session -t"
+alias ave="aws-vault exec mfa-test --"
 
 # Global Alias
 alias -g L='| less'
@@ -157,6 +158,29 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
+
+function peco-branch () {
+  local selected_dir=$(git branch | sed -e "s/^\*\s*//g" | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="git checkout ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-branch
+bindkey '^b' peco-branch
+
+function peco-instances () {
+  local instance=$(cat ~/jmty/instances.txt | peco --query "$LBUFFER")
+  if [ -n "$instance" ]; then
+    eid=$(echo $instance | awk -F'[,]' '{print $2}')
+    BUFFER="aws-vault exec mfa-test -- aws ssm start-session --target $eid --region ap-northeast-1"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-instances
+bindkey '^t' peco-instances
 
 export CLICOLOR=1
 autoload -Uz compinit && compinit  # Gitの補完を有効化
