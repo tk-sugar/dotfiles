@@ -42,4 +42,4 @@
 [core]
   excludesfile = /Users/takuma.sato/.gitignore_global
 [ghq]
-  root = ~/project
+  root = ~/WorkSpace

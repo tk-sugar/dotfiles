@@ -23,3 +23,11 @@ export PS1
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+#power-shell
+function _update_ps1() {
+    export PS1=""
+}
+export PROMPT_COMMAND="_update_ps1; "
+#power-shell
+
