@@ -5,3 +5,5 @@ Dotfiles create my config fails for vague-z
     etc...
 
 - git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+- cp ~/dotfiles/prepare-commit-msg .git/hooks/prepare-commit-msg

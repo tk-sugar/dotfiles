@@ -1,0 +1,5 @@
+#!/bin/sh
+## prepare-commit-msg
+
+branch=$(git branch | grep "*" | awk '{print $2}' | sed -e 's/[\/_]/ /g')
+perl -i.bak -ne "s/{branch}/$branch/g; print" "$1"

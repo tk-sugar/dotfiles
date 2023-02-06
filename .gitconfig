@@ -1,8 +1,8 @@
 [user]
   name = tk-sugar
-  email = app.enginner.z@gmail.com
+  email = 19794421+tk-sugar@users.noreply.github.com
 [core]
-  pager = less -r
+	pager = LESSCHARSET=utf-8 less
   editor = vim
   whitespace = off
   excludesfile = ~/.gitignore
@@ -21,6 +21,7 @@
   pl = pull
   b = branch
   co = checkout
+  cp = cherry-pick
   m = merge
   df = diff
   st = status
@@ -33,9 +34,11 @@
   lga = log --graph --all --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s %Cred%d%Creset'
     # diff
   dc = diff --cached
+  del = log --diff-filter=D --summary
   vimdiff = difftool --tool=vimdiff --no-prompt
   showpr = !"f() { git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1; }; f"
   openpr = "!f() { hub browse -- `git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1 | cut -f5 -d' ' | sed -e 's%#%pull/%'`; }; f"
+  search = log -P -S
 [init]
   templatedir = ~/.git_template
   defaultBranch = main
