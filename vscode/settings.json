@@ -1,0 +1,188 @@
+{
+  ///////////////////////////
+  // General Setting
+  ///////////////////////////
+  "files.insertFinalNewline": false,
+
+  //bookmarkをsidebarに表示する
+  "bookmarks.treeview.visible": true,
+  "workbench.editor.enablePreview": false,
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.editor.showTabs": "multiple", // タブを表示
+  "workbench.statusBar.visible": true, // ステータスバー(下端)を表示
+
+  "editor.rulers": [120],
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "boundary",
+  "editor.minimap.enabled": true,
+  "editor.minimap.maxColumn": 40, // ミニマップの幅
+  "editor.detectIndentation": false,
+  "editor.renderLineHighlight": "all", // 選択中の行を強調する
+  "editor.glyphMargin": true, // 行の左端に余白を作る
+  "editor.quickSuggestions": {
+    "comments": false, // コメント内では無効
+    "strings": true, // 文字列内では有効
+    "other": true //  その他の場所で有効
+  }, // 補完候補の自動表示
+  // "editor.formatOnType": true, // コード整形
+  // "editor.formatOnPaste": true, // コード整形
+  // "editor.formatOnSave": true,
+
+  "files.exclude": {
+    "**/.tags": true
+  },
+  ///////////////////////////
+  // Vim Setting
+  ///////////////////////////
+
+  // システムのclipboardにコピー
+  "vim.useSystemClipboard": true,
+  // 検索に:を入れる
+  "vim.cmdLineInitialColon": true,
+  "vim.hlsearch": true,
+  // 言わずもがなeasymotion
+  "vim.easymotion": true,
+  // カーソル上にあるワードを"*"で検索
+  "vim.visualstar": true,
+  // 諸々のctrlキーを使った操作が有効になる
+  "vim.useCtrlKeys": true,
+  "sync.gist": "814da5b0fe1609656a3a7501cbd182b1",
+  "explorer.confirmDragAndDrop": false,
+
+  ///////////////////////////
+  // Extension Setting
+  ///////////////////////////
+
+  "ctags": {
+    "executePath": "/Users/takuma.sato/.rbenv/shims/ripper-tags",
+    "options": "--tag-file=.tags --recursive --force --exclude=/assets/ --exclude=.bundle --exclude=.git/ --exclude=coverage/ --exclude=.arcanist-extensions/ --exclude=log/ --exclude=tmp/ --exclude=bin/",
+    "fileName": ".tags"
+  },
+  "editor.fontSize": 16,
+
+  "vscode-erb-beautify.executePath": "/Users/tk-sugar/.rbenv/versions/3.2.2/bin/htmlbeautifier",
+
+  ///////////////////////////
+  // Go Setting
+  ///////////////////////////
+  "go.gopath": "/Users/takuma.sato/.go",
+  "go.formatOnSave": true,
+  "explorer.confirmDelete": false,
+
+  "ruby.useBundler": true,
+  "ruby.useLanguageServer": true,
+  "ruby.format": "rubocop",
+  "ruby.intellisense": "rubyLocate",
+  "ruby.codeCompletion": "rcodetools",
+  "ctags.regenerateOnSave": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "cSpell.blockCheckingWhenAverageChunkSizeGreatherThan": 120,
+  "prettier.printWidth": 200,
+  // "textlint.autoFixOnSave": true,
+  "git.supportCancellation": true,
+  "vsicons.dontShowNewVersionMessage": true,
+
+  ///////////////////////////
+  // Python Setting
+  ///////////////////////////
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "hadolint.hadolintPath": "/usr/local/bin/hadolint",
+  "editor.insertSpaces": true,
+
+
+  ///////////////////////////
+  // TypeScript Setting
+  ///////////////////////////
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "redhat.telemetry.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false,
+    "yaml": true
+  },
+  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+  "php-cs-fixer.lastDownload": 1779255586366,
+  "editor.codeActionsOnSave": [
+    "source.addMissingImports",
+    // "source.organizeImports": true
+  ],
+  "yaml.customTags": [
+      "!Ref",
+      "!Sub scalar",
+      "!Sub sequence",
+      "!Join sequence",
+      "!FindInMap sequence",
+      "!GetAtt scalar",
+      "!GetAtt sequence",
+      "!Base64 mapping",
+      "!GetAZs",
+      "!Select scalar",
+      "!Select sequence",
+      "!Split sequence",
+      "!ImportValue",
+      "!Condition",
+      "!Equals sequence",
+      "!And",
+      "!If",
+      "!Not",
+      "!Or"
+    ],
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prisma.showPrismaDataPlatformNotification": false,
+    "github.copilot.editor.enableAutoCompletions": true,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "[php]": {
+      "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "git.ignoreMissingGitWarning": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "explorer.confirmPasteNative": false,
+    "ruby.rubocop.configFilePath": "/Users/tk-sugar/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/rubocop-1.59.0/config/default.yml",
+    "ruby.rubocop.executePath": "/Users/tk-sugar/.rbenv/shims/",
+    "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "docker.extension.enableComposeLanguageServer": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "chat.editing.confirmEditRequestRemoval": false,
+    "[dockercompose]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2,
+      "editor.autoIndent": "advanced",
+      "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+      },
+      "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+      "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.12",
+    "claudeCode.preferredLocation": "panel",
+    "chat.viewSessions.orientation": "stacked",
+    "security.workspace.trust.untrustedFiles": "open",
+}

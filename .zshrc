@@ -9,8 +9,8 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.cargo/env
 
-export PATH="$HOME/.rbenv/shims/bin:$PATH"
-eval "$(rbenv init - zsh)"
+export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
 
 # for MySQL v5.7
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
@@ -19,7 +19,7 @@ export DYLD_LIBRARY_PATH="/usr/local/opt/mysql@5.7/:$DYLD_LIBRARY_PATH"
 # for Python
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
+# eval "$(pyenv init --path)"
 
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
@@ -121,7 +121,6 @@ alias -g C='| xsel --clipboard --input'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export AWS_REGION=ap-northeast-1
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}
@@ -261,3 +260,7 @@ setopt prompt_subst
 RPROMPT='`rprompt-git-current-branch`'
 
 eval $(/opt/homebrew/bin/brew shellenv)
+
+# Added by Antigravity
+export PATH="/Users/tk-sugar/.antigravity/antigravity/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
