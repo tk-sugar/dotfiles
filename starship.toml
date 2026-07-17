@@ -1,0 +1,99 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# ダーク×カラフル基調（前のプロンプトの配色 179=ゴールド, 031=ティール, 087=シアン,
+# git状態は緑/赤/黄/青 を踏襲したイメージ）
+
+format = """
+$username$hostname$directory$git_branch$git_status$ruby$nodejs$golang$python$cmd_duration
+$character"""
+
+add_newline = true
+palette = "retro"
+
+[palettes.retro]
+gold = "#d7af5f"
+teal = "#0087af"
+cyan = "#5fffff"
+green = "#87d787"
+red = "#ff5f5f"
+yellow = "#ffff5f"
+blue = "#0087ff"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+
+[directory]
+style = "bold teal"
+truncation_length = 0
+truncate_to_repo = false
+format = "[$path]($style)[$read_only]($read_only_style) "
+read_only = " 🔒"
+read_only_style = "red"
+
+[git_branch]
+style = "bold cyan"
+symbol = " "
+format = "[on](blue) [$symbol$branch]($style) "
+
+[git_status]
+style = "bold yellow"
+format = "([$all_status$ahead_behind]($style)) "
+conflicted = "[×](bold red)"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕"
+untracked = "[?](bold red)"
+stashed = "*"
+modified = "[!](bold red)"
+staged = "[+${count}](bold yellow)"
+renamed = "»"
+deleted = "[✘](bold red)"
+
+[cmd_duration]
+min_time = 3000
+style = "bold yellow"
+format = "took [$duration]($style) "
+
+[ruby]
+style = "bold red"
+symbol = " "
+format = "[$symbol($version)]($style) "
+
+[nodejs]
+style = "bold green"
+symbol = " "
+format = "[$symbol($version)]($style) "
+
+[golang]
+style = "bold cyan"
+symbol = " "
+format = "[$symbol($version)]($style) "
+
+[python]
+style = "bold yellow"
+symbol = " "
+format = "[$symbol($version)]($style) "
+
+[username]
+disabled = false
+show_always = true
+style_user = "bold gold"
+style_root = "bold red"
+format = "[$user]($style)"
+
+[hostname]
+disabled = false
+ssh_only = false
+style = "bold gold"
+format = "[%@$hostname]($style) "
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[package]
+disabled = true

@@ -2,50 +2,115 @@
 # zsh General Settings
 #------------------------
 
-# Env setting
+# Homebrew (最初に読み込んで以降のPATHが正しく通るようにする)
+eval $(/opt/homebrew/bin/brew shellenv)
 
-export LANG=ja_JP.UTF-8
+#------------------------
+# Language environments
+#------------------------
+
+# Go
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
+
+# Rust
 export PATH=$PATH:$HOME/.cargo/env
 
+# Ruby (rbenv)
 export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
-# for MySQL v5.7
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-export DYLD_LIBRARY_PATH="/usr/local/opt/mysql@5.7/:$DYLD_LIBRARY_PATH"
-
-# for Python
+# Python (pyenv)
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init --path)"
+eval "$(pyenv init --path)"
 
-export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+# Node
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
+
+#------------------------
+# Other PATH / tool settings
+#------------------------
+
+export LANG=ja_JP.UTF-8
+export AWS_REGION=ap-northeast-1
+
+# GNU coreutils / tar を優先
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+
+# MySQL (5.7とHomebrewのmysql-clientが両方PATHに入っています。
+# バージョンが意図せず切り替わる場合はどちらか一方に絞るのがおすすめです)
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export DYLD_LIBRARY_PATH="/usr/local/opt/mysql@5.7/:$DYLD_LIBRARY_PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/tk-sugar/.antigravity/antigravity/bin:$PATH"
+
+typeset -U path PATH
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 # export PATH="$PATH:$HOME/.rvm/bin"
 # [ -s /home/tksugar/.rvm/scripts/rvm ] && source /home/tksugar/.rvm/scripts/rvm
 
-if [ -f .import_keys.rc ]; then
-  source .import_keys.rc
-fi
+#------------------------
+# Project-local secrets (要注意)
+#------------------------
+# cdした先のディレクトリに .import_keys.rc があると自動でsourceする仕組みでしたが、
+# 未知のディレクトリに移動しただけで任意のコードが実行されてしまう可能性があるため、
+# 一旦無効化しています。特定プロジェクトでだけ使う場合は、そのプロジェクトの
+# .zshrc的な仕組み(direnvなど)に切り出すか、絶対パスを指定する方が安全です。
+# if [ -f .import_keys.rc ]; then
+#   source .import_keys.rc
+# fi
 
-typeset -U path PATH
+#------------------------
+# Shell options
+#------------------------
 
-setopt histignorealldups sharehistory
+setopt print_eight_bit
+setopt no_beep
+setopt no_flow_control
+setopt ignore_eof
+setopt interactive_comments
+setopt auto_cd
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt extended_glob
+setopt prompt_subst
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
-# zsh history
+#------------------------
+# History
+#------------------------
+
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-# Use modern completion system
-# source /usr/local/bin/aws_zsh_completer.sh
+setopt extended_history
+setopt share_history
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_verify
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
+setopt hist_expire_dups_first
+setopt hist_expand
+setopt inc_append_history
+
+#------------------------
+# Completion
+#------------------------
+
+autoload -Uz compinit && compinit  # Gitの補完を有効化
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -64,25 +129,15 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# Option
-setopt print_eight_bit
-setopt no_beep
-setopt no_flow_control
-setopt ignore_eof
-setopt interactive_comments
-setopt auto_cd
-setopt auto_pushd
-setopt pushd_ignore_dups
-setopt share_history
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
-setopt hist_reduce_blanks
-setopt extended_glob
+export CLICOLOR=1
 
-# Alias
+#------------------------
+# Aliases
+#------------------------
+
 alias vi='vim'
 alias g='git'
-alias ls='exa'
+alias ls='exa'   # 後継のezaに移行済みのツールです。exaが入っていないと動きません
 alias ll='exa -la'
 alias la='exa -a'
 # alias cat='bat'
@@ -105,40 +160,22 @@ alias dm="docker-machine"
 alias ec="ecs-cli"
 alias dpr="docker rm -f \`docker ps -a -q\`"
 alias dir="docker rmi -f \`docker images -a -q\`"
-alias localmyq="mysql -u root -h 127.0.0.1 -p jmty_prototype_development"
-alias resque_stop="ps -ef | grep resque | grep -v grep | awk '{print $2}' | xargs kill -9"
-alias resque_start="cd ~/project/jmty/beagle && BACKGROUND=yes bundle exec rake resque:work QUEUE='*'"
-alias get-gmo-data="python2.7 ~/Desktop/Selenium/gmo_payment.py"
 alias xargs="gxargs"
 alias tas="tmux attach-session -t"
 alias ave="aws-vault exec mfa-test --"
+
+# python2.7前提のスクリプト。今のmacOSにはpython2.7が入っていない可能性が高く、
+# 動かなければpyenv経由でpython2.7を入れるか、このエイリアス自体の削除を検討してください。
+alias get-gmo-data="python2.7 ~/Desktop/Selenium/gmo_payment.py"
 
 # Global Alias
 alias -g L='| less'
 alias -g G='| grep'
 alias -g C='| xsel --clipboard --input'
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export AWS_REGION=ap-northeast-1
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
-export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}
-
-# peco for shell
-HISTFILE=~/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
-setopt extended_history
-setopt share_history
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
-setopt hist_verify
-setopt hist_reduce_blanks
-setopt hist_save_no_dups
-setopt hist_expire_dups_first
-setopt hist_expand
-setopt inc_append_history
+#------------------------
+# peco
+#------------------------
 
 function peco-select-history {
     BUFFER=`history -n -r 1 | peco --query "$LBUFFER"`
@@ -170,97 +207,9 @@ function peco-branch () {
 zle -N peco-branch
 bindkey '^b' peco-branch
 
-function peco-instances () {
-  local instance=$(cat ~/jmty/instances.txt | peco --query "$LBUFFER")
-  if [ -n "$instance" ]; then
-    eid=$(echo $instance | awk -F'[,]' '{print $2}')
-    BUFFER="aws-vault exec mfa-test -- aws ssm start-session --target $eid --region ap-northeast-1"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N peco-instances
-bindkey '^t' peco-instances
-
-export CLICOLOR=1
-autoload -Uz compinit && compinit  # Gitの補完を有効化
-
-function left-prompt {
-  name_t='179m%}'      # user name text clolr
-  name_b='000m%}'    # user name background color
-  path_t='255m%}'     # path text clolr
-  path_b='031m%}'   # path background color
-  arrow='087m%}'   # arrow color
-  text_color='%{\e[38;5;'    # set text color
-  back_color='%{\e[30;48;5;' # set background color
-  reset='%{\e[0m%}'   # reset
-  sharp='\uE0B0'      # triangle
-  
-  user="${back_color}${name_b}${text_color}${name_t}"
-  dir="${back_color}${path_b}${text_color}${path_t}"
-  echo "${user}%n%#@%m${back_color}${path_b}${text_color}${name_b}${sharp} ${dir}%~${reset}${text_color}${path_b}${sharp}${reset}\n${text_color}${arrow}→ ${reset}"
-}
-
-PROMPT=`left-prompt` 
-
-# コマンドの実行ごとに改行
-function precmd() {
-    # Print a newline before the prompt, unless it's the
-    # first prompt in the process.
-    if [ -z "$NEW_LINE_BEFORE_PROMPT" ]; then
-        NEW_LINE_BEFORE_PROMPT=1
-    elif [ "$NEW_LINE_BEFORE_PROMPT" -eq 1 ]; then
-        echo ""
-    fi
-}
-# git ブランチ名を色付きで表示させるメソッド
-function rprompt-git-current-branch {
-  local branch_name st branch_status
-
-  branch='\ue0a0'
-  color='%{\e[38;5;' #  文字色を設定
-  green='114m%}'
-  red='001m%}'
-  yellow='227m%}'
-  blue='033m%}'
-  reset='%{\e[0m%}'   # reset
-
-  if [ ! -e  ".git" ]; then
-    # git 管理されていないディレクトリは何も返さない
-    return
-  fi
-  branch_name=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
-  st=`git status 2> /dev/null`
-  if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
-    # 全て commit されてクリーンな状態
-    branch_status="${color}${green}${branch}"
-  elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
-    # git 管理されていないファイルがある状態
-    branch_status="${color}${red}${branch}?"
-  elif [[ -n `echo "$st" | grep "^Changes not staged for commit"` ]]; then
-    # git add されていないファイルがある状態
-    branch_status="${color}${red}${branch}+"
-  elif [[ -n `echo "$st" | grep "^Changes to be committed"` ]]; then
-    # git commit されていないファイルがある状態
-    branch_status="${color}${yellow}${branch}!"
-  elif [[ -n `echo "$st" | grep "^rebase in progress"` ]]; then
-    # コンフリクトが起こった状態
-    echo "${color}${red}${branch}!(no branch)${reset}"
-    return
-  else
-    # 上記以外の状態の場合
-    branch_status="${color}${blue}${branch}"
-  fi
-  # ブランチ名を色付きで表示する
-  echo "${branch_status}$branch_name${reset}"
-}
-# プロンプトが表示されるたびにプロンプト文字列を評価、置換する
-setopt prompt_subst
-# プロンプトの右側にメソッドの結果を表示させる
-RPROMPT='`rprompt-git-current-branch`'
-
-eval $(/opt/homebrew/bin/brew shellenv)
-
-# Added by Antigravity
-export PATH="/Users/tk-sugar/.antigravity/antigravity/bin:$PATH"
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+#------------------------
+# Prompt (Starship)
+#------------------------
+# 旧プロンプト(left-prompt/rprompt-git-current-branch)はStarshipに置き換えました。
+# 設定は ~/.config/starship.toml (実体は dotfiles/starship.toml)
+eval "$(starship init zsh)"
