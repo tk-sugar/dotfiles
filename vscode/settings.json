@@ -1,113 +1,105 @@
 {
   ///////////////////////////
-  // General Setting
+  // General
   ///////////////////////////
   "files.insertFinalNewline": false,
+  "files.exclude": {
+    "**/.tags": true
+  },
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmPasteNative": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "sync.gist": "814da5b0fe1609656a3a7501cbd182b1",
 
-  //bookmarkをsidebarに表示する
-  "bookmarks.treeview.visible": true,
+  ///////////////////////////
+  // Workbench
+  ///////////////////////////
   "workbench.editor.enablePreview": false,
   "workbench.colorTheme": "One Dark Pro",
   "workbench.editor.showTabs": "multiple", // タブを表示
   "workbench.statusBar.visible": true, // ステータスバー(下端)を表示
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
 
+  ///////////////////////////
+  // Editor
+  ///////////////////////////
   "editor.rulers": [120],
   "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.fontSize": 16,
   "editor.renderWhitespace": "boundary",
   "editor.minimap.enabled": true,
   "editor.minimap.maxColumn": 40, // ミニマップの幅
   "editor.detectIndentation": false,
   "editor.renderLineHighlight": "all", // 選択中の行を強調する
   "editor.glyphMargin": true, // 行の左端に余白を作る
+  "editor.suggestSelection": "first",
+  "editor.inlineSuggest.enabled": true,
   "editor.quickSuggestions": {
     "comments": false, // コメント内では無効
     "strings": true, // 文字列内では有効
-    "other": true //  その他の場所で有効
-  }, // 補完候補の自動表示
-  // "editor.formatOnType": true, // コード整形
-  // "editor.formatOnPaste": true, // コード整形
-  // "editor.formatOnSave": true,
-
-  "files.exclude": {
-    "**/.tags": true
+    "other": true // その他の場所で有効
   },
-  ///////////////////////////
-  // Vim Setting
-  ///////////////////////////
 
-  // システムのclipboardにコピー
-  "vim.useSystemClipboard": true,
-  // 検索に:を入れる
-  "vim.cmdLineInitialColon": true,
-  "vim.hlsearch": true,
-  // 言わずもがなeasymotion
-  "vim.easymotion": true,
-  // カーソル上にあるワードを"*"で検索
-  "vim.visualstar": true,
-  // 諸々のctrlキーを使った操作が有効になる
-  "vim.useCtrlKeys": true,
-  "sync.gist": "814da5b0fe1609656a3a7501cbd182b1",
-  "explorer.confirmDragAndDrop": false,
-
-  ///////////////////////////
-  // Extension Setting
-  ///////////////////////////
-
-  "ctags": {
-    "executePath": "/Users/takuma.sato/.rbenv/shims/ripper-tags",
-    "options": "--tag-file=.tags --recursive --force --exclude=/assets/ --exclude=.bundle --exclude=.git/ --exclude=coverage/ --exclude=.arcanist-extensions/ --exclude=log/ --exclude=tmp/ --exclude=bin/",
-    "fileName": ".tags"
+  // 保存時整形を全言語で統一して有効化
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": false,
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": "explicit"
   },
-  "editor.fontSize": 16,
 
-  "vscode-erb-beautify.executePath": "/Users/tk-sugar/.rbenv/versions/3.2.2/bin/htmlbeautifier",
-
-  ///////////////////////////
-  // Go Setting
-  ///////////////////////////
-  "go.gopath": "/Users/takuma.sato/.go",
-  "go.formatOnSave": true,
-  "explorer.confirmDelete": false,
-
-  "ruby.useBundler": true,
-  "ruby.useLanguageServer": true,
-  "ruby.format": "rubocop",
-  "ruby.intellisense": "rubyLocate",
-  "ruby.codeCompletion": "rcodetools",
-  "ctags.regenerateOnSave": true,
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
-  },
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "cSpell.blockCheckingWhenAverageChunkSizeGreatherThan": 120,
-  "prettier.printWidth": 200,
-  // "textlint.autoFixOnSave": true,
-  "git.supportCancellation": true,
-  "vsicons.dontShowNewVersionMessage": true,
-
-  ///////////////////////////
-  // Python Setting
-  ///////////////////////////
-  "python.linting.pylintEnabled": false,
-  "python.linting.flake8Enabled": true,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "hadolint.hadolintPath": "/usr/local/bin/hadolint",
-  "editor.insertSpaces": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    }
+  },
+  "prettier.printWidth": 200,
 
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": false,
 
   ///////////////////////////
-  // TypeScript Setting
+  // Git
   ///////////////////////////
-  "typescript.preferences.importModuleSpecifier": "non-relative",
-  "redhat.telemetry.enabled": true,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "editor.inlineSuggest.enabled": true,
+  "git.supportCancellation": true,
+  "git.ignoreMissingGitWarning": true,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+
+  ///////////////////////////
+  // Chat / Copilot
+  ///////////////////////////
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
@@ -115,74 +107,103 @@
     "scminput": false,
     "yaml": true
   },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "chat.editing.confirmEditRequestRemoval": false,
+  "chat.viewSessions.orientation": "stacked",
+  "claudeCode.preferredLocation": "panel",
+
+  ///////////////////////////
+  // Vim
+  ///////////////////////////
+  "vim.useSystemClipboard": true, // システムのclipboardにコピー
+  "vim.cmdLineInitialColon": true, // 検索に:を入れる
+  "vim.hlsearch": true,
+  "vim.easymotion": true, // 言わずもがなeasymotion
+  "vim.visualstar": true, // カーソル上にあるワードを"*"で検索
+  "vim.useCtrlKeys": true, // 諸々のctrlキーを使った操作が有効になる
+
+  ///////////////////////////
+  // ctags
+  ///////////////////////////
+  "ctags": {
+    "executePath": "/Users/tk-sugar/.rbenv/shims/ripper-tags",
+    "options": "--tag-file=.tags --recursive --force --exclude=/assets/ --exclude=.bundle --exclude=.git/ --exclude=coverage/ --exclude=.arcanist-extensions/ --exclude=log/ --exclude=tmp/ --exclude=bin/",
+    "fileName": ".tags"
+  },
+  "ctags.regenerateOnSave": true,
+
+  ///////////////////////////
+  // Spelling / Linters (misc)
+  ///////////////////////////
+  "cSpell.blockCheckingWhenAverageChunkSizeGreatherThan": 120,
+  "hadolint.hadolintPath": "/usr/local/bin/hadolint",
+  "redhat.telemetry.enabled": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "docker.extension.enableComposeLanguageServer": false,
+  "prisma.showPrismaDataPlatformNotification": false,
+
+  ///////////////////////////
+  // Go
+  ///////////////////////////
+  "go.gopath": "/Users/tk-sugar/.go",
+  "go.formatOnSave": true,
+
+  ///////////////////////////
+  // Ruby
+  ///////////////////////////
+  "ruby.useBundler": true,
+  "ruby.useLanguageServer": true,
+  "ruby.format": "rubocop",
+  "ruby.intellisense": "rubyLocate",
+  "ruby.codeCompletion": "rcodetools",
+  "ruby.rubocop.configFilePath": "/Users/tk-sugar/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/rubocop-1.59.0/config/default.yml",
+  "ruby.rubocop.executePath": "/Users/tk-sugar/.rbenv/shims/",
+  "vscode-erb-beautify.executePath": "/Users/tk-sugar/.rbenv/versions/3.2.2/bin/htmlbeautifier",
+
+  ///////////////////////////
+  // Python
+  // 旧 python.linting.* は非推奨のため削除。
+  // Flake8/Pylintを使う場合は各拡張機能の設定
+  // (flake8.*, pylint.*) を利用してください。
+  ///////////////////////////
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.12",
+
+  ///////////////////////////
+  // TypeScript / JavaScript
+  ///////////////////////////
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  ///////////////////////////
+  // PHP
+  ///////////////////////////
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
   "php-cs-fixer.lastDownload": 1779255586366,
-  "editor.codeActionsOnSave": [
-    "source.addMissingImports",
-    // "source.organizeImports": true
-  ],
+
+  ///////////////////////////
+  // YAML / CloudFormation
+  ///////////////////////////
   "yaml.customTags": [
-      "!Ref",
-      "!Sub scalar",
-      "!Sub sequence",
-      "!Join sequence",
-      "!FindInMap sequence",
-      "!GetAtt scalar",
-      "!GetAtt sequence",
-      "!Base64 mapping",
-      "!GetAZs",
-      "!Select scalar",
-      "!Select sequence",
-      "!Split sequence",
-      "!ImportValue",
-      "!Condition",
-      "!Equals sequence",
-      "!And",
-      "!If",
-      "!Not",
-      "!Or"
-    ],
-    "[html]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[css]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "prisma.showPrismaDataPlatformNotification": false,
-    "github.copilot.editor.enableAutoCompletions": true,
-    "diffEditor.hideUnchangedRegions.enabled": true,
-    "[php]": {
-      "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-    },
-    "git.ignoreMissingGitWarning": true,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "explorer.confirmPasteNative": false,
-    "ruby.rubocop.configFilePath": "/Users/tk-sugar/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/rubocop-1.59.0/config/default.yml",
-    "ruby.rubocop.executePath": "/Users/tk-sugar/.rbenv/shims/",
-    "[vue]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "docker.extension.enableComposeLanguageServer": false,
-    "github.copilot.nextEditSuggestions.enabled": true,
-    "chat.editing.confirmEditRequestRemoval": false,
-    "[dockercompose]": {
-      "editor.insertSpaces": true,
-      "editor.tabSize": 2,
-      "editor.autoIndent": "advanced",
-      "editor.quickSuggestions": {
-        "other": true,
-        "comments": false,
-        "strings": true
-      },
-      "editor.defaultFormatter": "redhat.vscode-yaml"
-    },
-    "[github-actions-workflow]": {
-      "editor.defaultFormatter": "redhat.vscode-yaml"
-    },
-    "gitlens.ai.model": "vscode",
-    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
-    "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.12",
-    "claudeCode.preferredLocation": "panel",
-    "chat.viewSessions.orientation": "stacked",
-    "security.workspace.trust.untrustedFiles": "open",
+    "!Ref",
+    "!Sub scalar",
+    "!Sub sequence",
+    "!Join sequence",
+    "!FindInMap sequence",
+    "!GetAtt scalar",
+    "!GetAtt sequence",
+    "!Base64 mapping",
+    "!GetAZs",
+    "!Select scalar",
+    "!Select sequence",
+    "!Split sequence",
+    "!ImportValue",
+    "!Condition",
+    "!Equals sequence",
+    "!And",
+    "!If",
+    "!Not",
+    "!Or"
+  ]
 }
