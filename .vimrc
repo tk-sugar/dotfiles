@@ -183,26 +183,46 @@ if argc() == 0
 end
 
 """""""""""""""""""""""""
-" Neocomplete
+" coc.nvim (旧 Neocomplete / Rsense の後継)
 """""""""""""""""""""""""
-let g:acp_enableAtStartup = 0
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
+" 旧 Neocomplete / Rsense セクションは2026-09-15に削除(経緯はdein.tomlのコメント参照)。
+" neocomplcacheがvital.vimのバージョン衝突でE716/E116を起こし、本体も
+" 2016年ごろから更新停止で修正の見込みがなかったため、メンテされている
+" LSPベースのcoc.nvimに置き換えた。
+"
+" 初回セットアップ:
+"   1. :call dein#install() で coc.nvim 本体を取得
+"   2. Ruby補完用に事前に `gem install solargraph` しておく
+"      (下記 g:coc_global_extensions で拡張は自動インストールされる)
+let g:coc_global_extensions = [
+      \ 'coc-tsserver',
+      \ 'coc-json',
+      \ 'coc-html',
+      \ 'coc-css',
+      \ 'coc-solargraph',
+      \ ]
 
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
-"""""""""""""""""""""""""
-" Rsense
-"""""""""""""""""""""""""
-if !exists('g:neocomplcache_omni_patterns')
-    let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+" <Tab>/<S-Tab> で補完候補を選択
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-let g:rsenseHome = expand("/Users/tksugar/.rbenv/shims/rsense")
-let g:rsenseUseOmniFunc = 1
+" <CR> で確定
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>"
+
+" 定義ジャンプ・ホバー
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> K :call CocActionAsync('doHover')<CR>
 
 """""""""""""""""""""""""
 " Syntastic

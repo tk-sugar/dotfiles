@@ -94,8 +94,6 @@
   ///////////////////////////
   "git.supportCancellation": true,
   "git.ignoreMissingGitWarning": true,
-  "gitlens.ai.model": "vscode",
-  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
 
   ///////////////////////////
   // Chat / Copilot
@@ -205,5 +203,6 @@
     "!If",
     "!Not",
     "!Or"
-  ]
+  ],
+  "githubPullRequests.pullBranch": "never"
 }

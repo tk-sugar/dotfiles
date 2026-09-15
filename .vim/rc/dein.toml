@@ -60,14 +60,16 @@ repo = 'davidhalter/jedi-vim'
 ###############################
 ## コード補完
 ###############################
+# neocomplcache.vim / neocomplcache-rsense.vim / rsense は2026-09-15に削除。
+# 理由: neocomplcacheが同梱するvital.vim(2013年時点のスナップショット)と
+# unite.vim/neosnippetが同梱する別バージョンのvital.vimがruntimepath上で衝突し、
+# vital#of('neocomplcache')が返す辞書にset_dictionary_helperが存在せず
+# E716/E116エラーで補完初期化が毎回失敗する状態になっていた。
+# neocomplcache自体2016年ごろから開発が止まっており修正が見込めないため、
+# メンテされているcoc.nvim(LSPベース)に置き換えた。
 [[plugins]]
-repo = 'Shougo/neocomplcache.vim'
-
-[[plugins]]
-repo = 'Shougo/neocomplcache-rsense.vim'
-
-[[plugins]]
-repo = 'rsense/rsense'
+repo = 'neoclide/coc.nvim'
+rev = 'release'
 
 ###############################
 ## 静的解析
